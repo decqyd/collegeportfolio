@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --col: white;
+  --tcol: black;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --col: rgb(7, 7, 7);
+    --tcol: white;
+  }
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #df0d0d transparent;
+}
+
+*::-webkit-scrollbar {
+  color: #df0d0d;
+  background-color: transparent;
+}
+
+html {
+  scroll-snap-type: y mandatory;
+}
+
+body {
+  color: var(--tcol);
+  /*background-image: url("../../public/background.svg");*/
+}
+
+.heading {
+  @apply xl:text-7xl leading-3 text-5xl tracking-tight xs:ml-5 sm:ml-20 font-bold mt-10 pb-5 absolute;
+}
+
+.section {
+  @apply relative w-full h-screen;
+  scroll-snap-align: center;
+}
+
+.title {
+  @apply text-[10rem] font-bold;
+}
+
+.link {
+  @apply underline text-white hover:text-red-200 transition-all duration-75;
+}
+
+.coolgrid {
+  @apply grid grid-cols-[1fr_1fr_1fr_1fr_1fr] grid-rows-[1fr_1fr] gap-[20px_20px];
+  grid-template-areas:
+    ". . . . ."
+    ". . . . .";
+}
